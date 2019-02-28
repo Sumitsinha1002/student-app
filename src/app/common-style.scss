@@ -1,0 +1,282 @@
+$base: #6277b1;
+$text: #555;
+$invalid: #E91E63;
+$width: 80%;
+$cubic: cubic-bezier(.64,.09,.08,1);
+
+html, body {
+  overflow-x: hidden;
+  
+}
+.content-main {
+  transition: transform .3s ease-in-out,margin .3s ease-in-out;
+}
+html, body, form, span, h1 {
+    box-sizing: border-box;
+}
+.form-control{
+  border-radius: 0px !important;
+}
+
+#main {
+  transition: margin .5s;
+  padding: 16px;
+  margin: 0px auto;
+    background: white;
+    width: 90%;
+    min-height: 600px;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+}
+
+h1 {
+  width: 100%;
+  background: $base;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.05);
+  border-radius: 3px 3px 0 0;
+}
+
+form {
+  font-family: 'roboto', sans-serif;
+  width: $width + 5%;
+  background: white;
+  //box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+  padding: 0 0 40px;
+  border-radius: 3px;
+  color: $text;
+  //margin-top: 8%;
+}
+
+.margin-10{
+  margin-left: 10%;
+  margin-top: 4%;
+}
+
+.inline-block{
+  display: inline-block;
+}
+.invalid-feedback{
+  margin-left: 12%;
+}
+
+.web-header{
+  margin-bottom: 5px !important;
+}
+/* input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,select::-webkit-input-placeholder {
+  font: inherit;
+  transition: transform 0.3s ease-in-out,
+    font-size 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+} */
+
+.placeholder
+{
+    position: relative;
+}
+
+.placeholder::after
+{
+  position: absolute;
+  content: attr(data-placeholder);
+  left: 30px;
+  top: 30px;
+  font-size: 0.9em;
+  -webkit-transform: translateY(-20px);
+  transform: translateY(-20px);
+  visibility: visible !important;
+  opacity: 1;
+  color: $base;
+}
+
+input,
+textarea, select {
+  font: inherit;
+  font-size: 0.8em;
+  margin: 15px 25px 0px;
+  display: block;
+  border: none;
+  float: left;
+  padding: 20px 0 10px;
+  border-bottom: solid 1px $base;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 100%, $base 4%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  resize: none;
+  overflow: hidden; 
+  background-position: 0 0;
+  
+  &:focus{
+    box-shadow: none;
+    outline: none;
+   
+    &::-webkit-input-placeholder {
+      font-size: 0.8em;
+      transform: translateY(-20px);
+      visibility: visible !important;
+      opacity: 1;
+    }
+  }
+}
+.input-3{
+  width: $width;
+}
+.input-1{
+  width: $width;
+}
+.input-2{
+  width: $width;
+}
+select{
+  height: 45px !important;
+}
+
+input[type="email"] {
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $base 4%);
+  background-position: -400px 0;
+  background-repeat: no-repeat;
+  transition: border-bottom 0.3s ease, background 0.3s ease;
+  &~span.validation-text {
+    position: absolute;
+    visibility: hidden;
+    font-family: 'roboto', sans-serif;
+    font-size: 0.6em;
+    width: $width;
+    margin-left: 25px;
+    margin-top:-5px;
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+  &:not([value=""]) {
+    &::-webkit-input-placeholder {
+      font-size: 0.8em;
+      transform: translateY(-20px);
+      visibility: visible !important;
+      opacity: 1;
+    }
+    &:focus::-webkit-input-placeholder {
+      color: $base;
+    }
+    &::-webkit-input-placeholder::after
+    {
+      position: absolute;
+      content: attr(data-placeholder);
+    }
+    &:focus:not(:valid)::-webkit-input-placeholder {
+      color: $invalid;
+    }
+  }
+  &:focus {
+    background-position: 0 0;
+    &:not(:valid):not([value=""]) {
+      border-bottom: solid 1px $invalid;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $invalid 4%);
+    }
+  }
+  &:not(:focus):not(:valid):not([value=""]) {
+    &::-webkit-input-placeholder {
+      color: $invalid;
+    }
+    border-bottom: solid 1px $invalid;
+    background-position: 0 0 ;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $invalid 4%);
+    &~span.validation-text {
+      visibility: visible;
+      color: $invalid;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: stretch;
+  textarea {
+    line-height: 120%;
+  }
+}
+
+ button {
+  
+  margin-left: 40% !important;  
+  
+} 
+
+/*a {
+  display: inline-block;
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+  font-family: 'roboto', sans-serif;
+  text-decoration: none;
+  color: $base;
+  i {
+    margin-right: 5px;
+  }
+}*/
+
+a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  background: $base;
+  display: inline-block;
+  margin: 50px calc(50% - 21px);
+  white-space: nowrap;
+  padding: 13px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.2s $cubic;
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
+  i {
+    margin-right: 20px;
+    transition: margin-right 0.2s $cubic;
+  }
+  &:hover {
+    width: 134px;
+    transform: translateX(-50px);
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+// HR CSS
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .7;
+  margin:6px;
+  &:before {
+    content: '';
+    // use the linear-gradient for the fading effect
+    // use a solid background color for a solid bar
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  &:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+
+    padding: 0 .5em;
+    line-height: 1.5em;
+    // this is really the only tricky part, you need to specify the background color of the container element...
+    color: #676660;
+    background-color: #fcfcfa;
+  }
+}
+
+
+

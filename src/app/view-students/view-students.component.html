@@ -1,0 +1,62 @@
+<div class="search-header">
+    <i class="now-ui-icons ui-1_zoom-bold search-icon"></i>
+    <input class="form-control form-control-lg search" type="text" (keyup)="applyFilter($event.target.value)"placeholder="Search..">
+    <span class="form-group">
+        <button class="btn btn-primary add-student"  routerLink="/add-student">
+            <i class="now-ui-icons ui-1_simple-add add-icon"></i>ADD</button>
+    </span>
+  </div>
+  <!-- <div class="input-group"  >
+        <i class="now-ui-icons ui1_zoom-bold"></i>
+      <input type="text" class="form-control form-control-lg search"(keyup)="applyFilter($event.target.value)"placeholder="Search..">
+    </div> -->
+  
+  <div class="table-container mat-elevation-z8">
+  
+    <mat-table class="table-app" [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="progress">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+          <span><img class = "action-buttons" src="./../../assets/theme/img/edit-3-128.png"></span>  
+          <span><img class = "action-buttons" src="./../../assets/theme/img/search.png"></span>  
+          <span><img class = "action-buttons" src="./../../assets/theme/img/delete-128.png"></span>  
+          </mat-cell>
+        </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [hidePageSize]="true" [pageSize]="7"></mat-paginator>
+  </div>
+  
+  
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->

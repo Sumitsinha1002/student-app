@@ -1,0 +1,83 @@
+.search{
+    -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  box-sizing: border-box;
+  border: 1px solid #2f323e;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+  width:20%;
+  margin-bottom: 5px;
+  float:left;
+}
+.search-header{
+    margin-top: 4%;
+    display: inline-block;
+    width: 100%;
+
+}
+.search:focus{
+    width: 40%;
+    border: 2px solid #2f323e;
+}
+/deep/ .cdk-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.table-app mat-header-row{
+    background: #2f323e !important;
+    color: white;
+}
+.table-app mat-row{
+    border-bottom: 1px solid lightgrey;
+}
+.table-container{
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+.table-app mat-header-row .cdk-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.search-icon{
+    padding: 10px 1px 1px 10px;
+    color: black;
+    position: absolute;
+    font-size: 26px;
+}
+/deep/.mat-paginator-navigation-next:not([disabled]) , /deep/.mat-paginator-navigation-previous:not([disabled]){
+    background-color: #2f323e !important;
+    color: white !important;
+    margin-left: 5px;
+}
+/deep/.mat-paginator-navigation-next:focus , /deep/.mat-paginator-navigation-previous:focus{
+    outline:none;
+}
+/deep/.mat-sort-header-arrow{
+    transform: translateY(5px) !important;
+    opacity: 1;
+}
+.action-buttons{
+    width:10%;
+    margin: 5px;
+}
+.add-student{
+    float:right;
+}
+.add-icon{
+    float: left;
+    font-weight: bold;
+    margin-right: 8px;
+}

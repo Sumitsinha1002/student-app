@@ -1,0 +1,24 @@
+<nav id = "main" class="navbar fixed-top navbar-light bg-primary">
+    <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+    <span>
+    <a class="navbar-brand" href="#">Student-Organiser</a>
+  </span>
+  </nav>
+  <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/dashboard" >
+        <i class="now-ui-icons business_chart-pie-36 menu-icons"></i>&nbsp;Dashboard</a></a>
+      <p class="menu-header">Master</p>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ><a class="sub-menu" routerLink="/view-student" >
+        <i class="now-ui-icons business_badge menu-icons"></i>&nbsp;Student</a></a>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ><a class="sub-menu">
+            <i class="now-ui-icons education_hat menu-icons"></i>&nbsp;Faculty</a></a>
+      <p class="menu-header">Transaction</p>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ><a class="sub-menu" >
+            <i class="now-ui-icons arrows-1_share-66 menu-icons"></i>&nbsp;Marks Upload</a></a>
+      <p class="menu-header">Reports</p>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ><a class="sub-menu" routerLink="/reports">
+        <i class="now-ui-icons media-2_sound-wave menu-icons"></i>&nbsp;Classwise Report</a></a>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ><a class="sub-menu" >
+            <i class="now-ui-icons media-2_sound-wave menu-icons"></i>&nbsp;Subjectwise Report</a></a>
+    </div>

@@ -1,0 +1,101 @@
+<div >
+    <div class="container">
+        <div class="row">
+            <div class="margin-10">
+                <p class="h3 web-header">Student Registration Form</p>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                    <div class="form-group inline-block" style = "width:100%">
+                        <select class="form-control input-1"name = "schoolId" [(ngModel)]="model.schoolId" #schoolId="ngModel">
+                            <option *ngFor="let school of schools" [ngValue]="school.id">
+                                {{school.name}}
+                                </option>
+                        </select>
+                      </div>
+                      <hr class="hr-text" data-content="Personal Information">
+                    <div class= "placeholder form-group inline-block" data-placeholder="First Name">
+                        <input type="text"   class="form-control input-3" name="firstName" [(ngModel)]="model.personalDetails.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+                        <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                            <div *ngIf="firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class= "placeholder form-group inline-block" data-placeholder="Middle Name">
+                      <input  type="text"  class="form-control input-3" name="middleName" [(ngModel)]="model.personalDetails.middleName" #middleName="ngModel"  />
+                  </div>
+                    <div class= "placeholder form-group inline-block" data-placeholder="Last Name">
+                        <input type="text" class="form-control input-3" name="lastName" [(ngModel)]="model.personalDetails.lastName" #lastName="ngModel"  />
+                    </div>
+                    <div class= "placeholder form-group inline-block" data-placeholder="Email">
+                        <input type="text" class="form-control input-1" name="email" [(ngModel)]="model.personalDetails.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.email && !email.errors.required">Must be a valid email address</div>
+                        </div>
+                    </div>
+                    <hr class="hr-text" data-content="Parents Details">
+                    <div class="placeholder form-group inline-block" data-placeholder="Father's Name">
+                      <input type="text" class="form-control  input-2" name="fatherName" [(ngModel)]="model.personalDetails.fatherName" #fatherName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fatherName.invalid }" required />
+                      <div *ngIf="f.submitted && fatherName.invalid" class="invalid-feedback">
+                          <div *ngIf="fatherName.errors.required">Father's Name is required</div>
+                      </div>
+                  </div>
+                  <div class="placeholder form-group inline-block" data-placeholder="Mother's Name">
+                    <input type="text" class="form-control input-2" name="motherName" [(ngModel)]="model.personalDetails.motherName" #motherName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && motherName.invalid }" required />
+                    <div *ngIf="f.submitted && motherName.invalid" class="invalid-feedback">
+                        <div *ngIf="motherName.errors.required">Mother's Name is required</div>
+                    </div>
+                </div>
+                <hr class="hr-text" data-content="Contact Information">
+                <div class="placeholder form-group inline-block" data-placeholder="Mobile">
+                    <input type="text"  class="form-control input-3" name="mobile" [(ngModel)]="model.personalDetails.mobile" #mobile="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mobile.invalid }" required />
+                    <div *ngIf="f.submitted && mobile.invalid" class="invalid-feedback">
+                        <div *ngIf="mobile.errors.required">Field is required</div>
+                    </div>
+                </div>
+                <div class="placeholder form-group inline-block" data-placeholder="Landline">
+                    <input type="text"  class="form-control input-3" name="landline" [(ngModel)]="model.personalDetails.landline" #landline="ngModel" [ngClass]="{ 'is-invalid': f.submitted && landline.invalid }" />
+                </div>
+                <div class="placeholder form-group inline-block" data-placeholder="Whatsapp">
+                    <input type="text"  class="form-control input-3" name="whatsapp" [(ngModel)]="model.personalDetails.whatsapp" #whatsapp="ngModel" [ngClass]="{ 'is-invalid': f.submitted && whatsapp.invalid }" required />
+                    <div *ngIf="f.submitted && whatsapp.invalid" class="invalid-feedback">
+                        <div *ngIf="whatsapp.errors.required">Field is required</div>
+                    </div>
+                </div>
+                <div class="placeholder form-group inline-block" data-placeholder="House/Flat/Plot Number">
+                    <input type="text"  class="form-control input-3" name="houseNo" [(ngModel)]="model.personalDetails.adress.houseNo" #houseNo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && houseNo.invalid }" required />
+                    <div *ngIf="f.submitted && houseNo.invalid" class="invalid-feedback">
+                        <div *ngIf="houseNo.errors.required">Field is required</div>
+                    </div>
+                </div>
+                <div class="placeholder form-group inline-block" data-placeholder="City">
+                    <input type="text" class="form-control input-3" name="city" [(ngModel)]="model.personalDetails.adress.city" #city="ngModel" [ngClass]="{ 'is-invalid': f.submitted && city.invalid }" required />
+                    <div *ngIf="f.submitted && city.invalid" class="invalid-feedback">
+                        <div *ngIf="city.errors.required">City is required</div>
+                    </div>
+                </div>
+                <div class="placeholder form-group inline-block" data-placeholder="State">
+                    <input type="text" class="form-control input-3" name="state" [(ngModel)]="model.personalDetails.adress.state" #state="ngModel" [ngClass]="{ 'is-invalid': f.submitted && state.invalid }" required />
+                    <div *ngIf="f.submitted && state.invalid" class="invalid-feedback">
+                        <div *ngIf="state.errors.required">State is required</div>
+                    </div>
+                </div>
+                <div class="placeholder form-group inline-block"  data-placeholder="Pincode">
+                    <input type="number" class="form-control input-2" name="pincode" [(ngModel)]="model.personalDetails.adress.pincode" #pincode="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pincode.invalid }" required />
+                    <div *ngIf="f.submitted && pincode.invalid" class="invalid-feedback">
+                        <div *ngIf="pincode.errors.required">Pincode is required</div>
+                    </div>
+                </div>
+                <div class="placeholder form-group inline-block" data-placeholder="Country">
+                    <input type="text" class="form-control input-2" name="country" [(ngModel)]="model.personalDetails.adress.country" #country="ngModel" [ngClass]="{ 'is-invalid': f.submitted && country.invalid }" required />
+                    <div *ngIf="f.submitted && country.invalid" class="invalid-feedback">
+                        <div *ngIf="country.errors.required">country is required</div>
+                    </div>
+                </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
